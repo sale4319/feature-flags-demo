@@ -1,0 +1,14 @@
+.container {
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.themeDark {
+  background-color: #333;
+  color: #fff;
+}
+
+.themeLight {
+  background-color: #333;
+  color: #fff;
+}
