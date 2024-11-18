@@ -1,10 +1,18 @@
-type FeatureFlags = {
-  [key: string]: boolean;
-};
+import featureFlags from "./flags.json";
 
-export function isFeatureEnabled(
-  featureName: string,
-  flags: FeatureFlags
-): boolean {
-  return flags[featureName] === true;
+type FeatureFlagKeys = keyof typeof featureFlags;
+
+// Wrapper function
+export function featureFlagWrapper<T>(
+  featureName: FeatureFlagKeys,
+  onEnabled: T,
+  onDisabled: T
+): T {
+  const isEnabled = featureFlags[featureName] === true;
+  return isEnabled ? onEnabled : onDisabled;
+}
+
+// Conditional function
+export function isFeatureEnabled(featureName: FeatureFlagKeys): boolean {
+  return featureFlags[featureName] === true;
 }

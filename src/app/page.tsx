@@ -15,8 +15,16 @@ export default function Home() {
         />
         <ol>
           <li>
-            <a href="/flagExample" rel="noopener noreferrer">
-              Example
+            <a
+              href="/flagExamples/conditionalExample"
+              rel="noopener noreferrer"
+            >
+              Conditional example
+            </a>
+          </li>
+          <li>
+            <a href="/flagExamples/wrapperExample" rel="noopener noreferrer">
+              Wrapper example
             </a>
           </li>
         </ol>
